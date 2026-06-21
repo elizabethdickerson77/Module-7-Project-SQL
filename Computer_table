@@ -1,0 +1,8 @@
+CREATE TABLE Computer (
+    ComputerID INT AUTO_INCREMENT PRIMARY KEY,
+    Manufacturer VARCHAR(50) NOT NULL,
+    Model VARCHAR(50) NOT NULL,
+    SerialNumber VARCHAR(100) UNIQUE NOT NULL,
+    PurchaseDate DATE,
+    WarrantyExpiry DATE,
+    Status VARCHAR(20) DEFAULT 'Active'
