@@ -1,0 +1,8 @@
+CREATE TABLE User (
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Department VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    Phone VARCHAR(20)
+);
