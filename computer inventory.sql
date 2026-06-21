@@ -19,9 +19,10 @@ CREATE TABLE Computer (
 );
 
 -- ============================================
--- TABLE: User
+-- TABLE: AppUser
 -- ============================================
-CREATE TABLE User (
+-- Changed name to 'AppUser' because 'User' is a reserved keyword in most SQL dialects
+CREATE TABLE AppUser (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
@@ -50,20 +51,22 @@ CREATE TABLE Assignment (
     AssignmentDate DATE NOT NULL,
     FOREIGN KEY (ComputerID) REFERENCES Computer(ComputerID)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+    FOREIGN KEY (UserID) REFERENCES AppUser(UserID)
         ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- ============================================
 -- TABLE: UserLocation
 -- ============================================
+-- Completed the dangling statement and added foreign key relationships
 CREATE TABLE UserLocation (
     UserLocationID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT NOT NULL,
     LocationID INT NOT NULL,
     UserLocationDate DATE NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+    FOREIGN KEY (UserID) REFERENCES AppUser(UserID)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (LocationID) REFERENCES Location(LocationID)
         ON DELETE CASCADE ON UPDATE CASCADE
 );
+
