@@ -1,0 +1,6 @@
+CREATE TABLE Location (
+    LocationID INT AUTO_INCREMENT PRIMARY KEY,
+    Building VARCHAR(50) NOT NULL,
+    RoomNumber VARCHAR(20),
+    Floor VARCHAR(10)
+);
